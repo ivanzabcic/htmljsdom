@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background-color: red;
+}
+</style>
+
+<body>
+
+<h1 id="id1">Head</h1>
+
+<button id="myBtn">Try it</button>
+
+<p id="demo"></p>
+
+<div>
+<p id="p1">This is a paragraph.</p>
+<p id="p2">This is another paragraph.</p>
+</div>
+
+<button type="button" 
+onclick="document.getElementById('id1').style.color = 'yellow'">
+Klikni</button>
+
+<div id ="container">
+  <div id ="animate"></div>
+</div>
+
+<button onclick="myFunction()">Remove Element</button>
+
+<script>
+function myMove() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+
+function myMove() {
+  var elem = document.getElementById("animate");   
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if (pos == 350) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = pos + "px"; 
+      elem.style.left = pos + "px"; 
+    }
+  }
+}
+
+function myFunction() {
+  var elmnt = document.getElementById("p1");
+  elmnt.remove();
+}
+
+
+</script>
+
+</body>
+</html>
